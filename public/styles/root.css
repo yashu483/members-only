@@ -53,21 +53,30 @@ body {
 
 header {
   display: flex;
-  gap: 20px;
-  align-items: center;
-  justify-content: space-between;
+  flex-direction: column;
   padding: 5px 20px;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 87px;
   border-bottom: 1px solid rgb(128, 128, 128, 0.5);
 }
-header > h1 {
+
+header > div:nth-of-type(1) {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  justify-content: space-between;
+}
+header h1#logo {
   font-family: "Rubik Moonrocks", "Inter", "Roboto", "Google Sans";
   color: white;
   background-color: blue;
   padding: 5px 10px;
   border-radius: 10px;
 }
-header > button#theme-toggle-button {
+
+.hidden {
+  display: none !important;
+}
+header button#header-menu-button {
   width: 30px;
   height: 30px;
   border: none;
@@ -80,6 +89,16 @@ header > button#theme-toggle-button {
   background-color: white;
 }
 
+header nav#header-nav {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+nav#header-nav > a {
+  text-align: center;
+  text-decoration: none;
+  color: inherit;
+  padding: 10px;
+}
 footer {
   display: flex;
   justify-content: center;
