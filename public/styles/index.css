@@ -1,3 +1,18 @@
-header > h1 {
-  font-family: "Rubik Moonrocks", "Inter", "Roboto", "Google Sans";
+html {
+  display: grid;
+  --main-bg-color: rgb(243, 244, 246);
 }
+
+body {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  box-sizing: border-box;
+}
+
+main {
+  background-color: var(--main-bg-color);
+}
+
+/* main {
+  min-height: 100%;
+} */
