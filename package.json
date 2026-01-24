@@ -1,0 +1,20 @@
+{
+  "name": "members-only",
+  "version": "1.0.0",
+  "description": "A simple website where users are required to log in to access content and more features. Purpose of this application is to practice user authentication and authorization using username and password.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yashu483/members-only.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yashu483/members-only/issues"
+  },
+  "homepage": "https://github.com/yashu483/members-only#readme"
+}
