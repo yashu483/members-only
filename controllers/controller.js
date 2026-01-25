@@ -1,7 +1,7 @@
 const db = require("./../db/queries");
 const bcrypt = require("bcryptjs");
 const { body, validationResult, matchedData } = require("express-validator");
-
+const passport = require("passport");
 const errMessages = {
   notEmpty(field) {
     return `${field} cannot be empty`;
@@ -65,6 +65,10 @@ const validateSignUpData = [
     .withMessage("Last name should not be more than 100 character long"),
 ];
 
+const signUpGet = (req, res) => {
+  res.render("sign-up");
+};
+
 const signUpPost = [
   validateSignUpData,
   async (req, res, next) => {
@@ -89,4 +93,8 @@ const signUpPost = [
   },
 ];
 
-module.exports = { signUpPost };
+const logInGet = (req, res) => {
+  res.render("log-in");
+};
+
+const logInPost = (module.exports = { signUpGet, signUpPost, logInGet });

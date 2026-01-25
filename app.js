@@ -12,6 +12,7 @@ const PORT = process.env.PORT;
 // importing Routers
 const indexRouter = require("./routes/indexRouter");
 const signUpRouter = require("./routes/signUpRouter");
+const logInRouter = require("./routes/logInRouter");
 
 const app = express();
 
@@ -75,8 +76,8 @@ app.use((req, res, next) => {
 
 // routes
 app.use("/", indexRouter);
-app.use("/sign-up", signUpRouter);
-// app.use("/log-in", logInRouter);
+app.use("/signup", signUpRouter);
+app.use("/login", logInRouter);
 // app.use("/new-post", newPostRouter);
 
 app.listen(PORT, (err) => {
