@@ -60,6 +60,7 @@ const validateSignUpData = [
     .isLength({ max: 100 })
     .withMessage("First Name should not be more than 100 character"),
   body("lastName")
+    .trim()
     .isLength({ max: 100 })
     .withMessage("Last name should not be more than 100 character long"),
 ];
@@ -80,7 +81,7 @@ const signUpPost = [
       username: user.username,
       password: hashedPass,
       firstName: user.firstName,
-      lastName: user.lastName | "",
+      lastName: user.lastName,
     };
 
     await db.addUser(userData);
