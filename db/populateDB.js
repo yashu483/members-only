@@ -20,14 +20,14 @@ id BIGINT PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
 title TEXT NOT NULL,
 message TEXT NOT NULL,
 user_id INTEGER,
-created_at TIMESTAMPZ NOT NULL DEFAULT NOW(),
+created_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
 FOREIGN KEY (user_id) REFERENCES users(id),
 CHECK(length(title) <= 400)
 );`;
 
 const main = async () => {
   const client = new Client({
-    connectionString: process.env.CONNECTION_URL,
+    connectionString: process.env.DATABASE_URL,
   });
   try {
     console.log("seeding...");
