@@ -9,7 +9,8 @@ first_name  TEXT NOT NULL,
 last_name TEXT,
 username VARCHAR(100) NOT NULL UNIQUE,
 password TEXT NOT NULL,
-membership_status VARCHAR(100),
+is_member BOOLEAN NOT NULL DEFAULT FALSE,
+is_admin BOOLEAN NOT NULL DEFAULT FALSE,
 
 CHECK(username ~ '^[A-Za-z0-9._-]+$'),
 CHECK(length(first_name) <= 100)
