@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/yashu483/members-only#readme",
   "dependencies": {
+    "dotenv": "^17.2.3",
     "ejs": "^4.0.1",
     "express": "^5.2.1",
     "express-session": "^1.19.0",

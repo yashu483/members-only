@@ -23,7 +23,7 @@ app.use(
   }),
 );
 
-// passport.use(new LocalStrategy((username, password, done) => {}));
+passport.use(new LocalStrategy((username, password, done) => {}));
 
 app.use("/", indexRouter);
 
