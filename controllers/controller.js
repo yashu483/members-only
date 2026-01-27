@@ -144,11 +144,11 @@ const newPostAdd = [
     res.redirect("/");
   },
 ];
-const logInPost = (module.exports = {
+module.exports = {
   homePageGet,
   signUpGet,
   signUpPost,
   logInGet,
   newPostGet,
   newPostAdd,
-});
+};

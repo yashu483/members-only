@@ -30,6 +30,15 @@ const addUser = async (user) => {
     [user.username, user.password, user.firstName, user.lastName],
   );
 };
+
+const grantMembership = async (id) => {
+  await pool.query("UPDATE users SET is_member = true WHERE id = $1", [id]);
+};
+
+const grantAdminRole = async (id) => {
+  await pool.query("UPDATE users SET is_admin = true WHERE id = $1", [id]);
+};
+
 // queries for posts table
 const getAllPosts = async () => {
   const { rows } = await pool.query("SELECT * FROM posts");

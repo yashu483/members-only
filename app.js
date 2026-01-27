@@ -80,6 +80,7 @@ app.use("/", indexRouter);
 app.use("/signup", signUpRouter);
 app.use("/login", logInRouter);
 app.use("/new-post", newPostRouter);
+app.use("/roles", rolesRouter);
 app.use("/logout", (req, res, next) => {
   req.logout((err) => {
     if (err) {
