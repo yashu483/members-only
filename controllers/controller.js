@@ -1,7 +1,6 @@
 const db = require("./../db/queries");
 const bcrypt = require("bcryptjs");
 const { body, validationResult, matchedData } = require("express-validator");
-const passport = require("passport");
 const errMessages = {
   notEmpty(field) {
     return `${field} cannot be empty`;
@@ -80,30 +79,35 @@ const signUpGet = (req, res) => {
 const signUpPost = [
   validateSignUpData,
   async (req, res, next) => {
-    const errors = validationResult(req);
-    if (!errors.isEmpty()) {
-      res.status(400).render("sign-up", { errors: errors.array() });
-      return;
+    try {
+      const errors = validationResult(req);
+      if (!errors.isEmpty()) {
+        res.status(400).render("sign-up", { errors: errors.array() });
+        return;
+      }
+
+      const user = matchedData(req);
+      const hashedPass = await bcrypt.hash(user.password, 10);
+
+      const userData = {
+        username: user.username,
+        password: hashedPass,
+        firstName: user.firstName,
+        lastName: user.lastName,
+      };
+
+      await db.addUser(userData);
+      res.redirect("/");
+    } catch (err) {
+      next(err);
     }
-
-    const user = matchedData(req);
-    const hashedPass = await bcrypt.hash(user.password, 10);
-
-    const userData = {
-      username: user.username,
-      password: hashedPass,
-      firstName: user.firstName,
-      lastName: user.lastName,
-    };
-
-    await db.addUser(userData);
-    res.redirect("/");
   },
 ];
 
 // login page controller
 const logInGet = (req, res) => {
-  res.render("log-in");
+  const errorMessage = req.session.messages;
+  res.render("log-in", { error: errorMessage });
 };
 
 // new-post page controller
