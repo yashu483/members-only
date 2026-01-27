@@ -5,3 +5,5 @@ const rolesRouter = Router();
 
 rolesRouter.get("/", controller.rolesGet);
 rolesRouter.post("/:role", controller.roleApplyPost);
+
+module.exports = rolesRouter;

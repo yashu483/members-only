@@ -14,6 +14,7 @@ const indexRouter = require("./routes/indexRouter");
 const signUpRouter = require("./routes/signUpRouter");
 const logInRouter = require("./routes/logInRouter");
 const newPostRouter = require("./routes/newPostRouter");
+const rolesRouter = require("./routes/rolesRouter");
 
 const app = express();
 

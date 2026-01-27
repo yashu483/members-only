@@ -3,9 +3,20 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <%- include('common-dependencies') %>
     <title>Apply Role | Members only</title>
   </head>
   <body>
-    <h1>Hii this one is great;</h1>
+    <main>
+      <%- include('header') %>
+      <h1>Apply for Roles</h1>
+      <p>
+        Unlock exclusive features, see member details and delete or modify your
+        posts
+      </p>
+      <%- include('partials/membership-card') %> <%-
+      include('partials/admin-card') %>
+    </main>
+    <%- include('footer') %>
   </body>
 </html>

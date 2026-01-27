@@ -97,7 +97,7 @@ const signUpPost = [
       };
 
       await db.addUser(userData);
-      res.redirect("/");
+      res.redirect("/login");
     } catch (err) {
       next(err);
     }
