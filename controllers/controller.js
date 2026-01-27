@@ -65,6 +65,14 @@ const validateSignUpData = [
     .withMessage("Last name should not be more than 100 character long"),
 ];
 
+// homepage controller
+const homePageGet = async (req, res) => {
+  const posts = await db.getAllPosts();
+
+  res.render("index", { posts: posts });
+};
+
+// signup page controller
 const signUpGet = (req, res) => {
   res.render("sign-up");
 };
@@ -93,8 +101,50 @@ const signUpPost = [
   },
 ];
 
+// login page controller
 const logInGet = (req, res) => {
   res.render("log-in");
 };
 
-const logInPost = (module.exports = { signUpGet, signUpPost, logInGet });
+// new-post page controller
+
+const newPostGet = (req, res) => {
+  res.render("new-post");
+};
+
+const validateNewPost = [
+  body("title")
+    .trim()
+    .notEmpty()
+    .withMessage("Title cannot be empty")
+    .isLength({ max: 100 }),
+  body("message").trim().notEmpty().withMessage("message cannot be empty"),
+];
+const newPostAdd = [
+  validateNewPost,
+  async (req, res) => {
+    const errors = validationResult(req);
+
+    if (!errors.isEmpty()) {
+      res.render("new-post", { errors: errors.array() });
+      return;
+    }
+    const user = req.user;
+    const post = matchedData(req);
+    const postData = {
+      title: post.title,
+      message: post.message,
+      userId: user.id,
+    };
+    await db.createPost(postData);
+    res.redirect("/");
+  },
+];
+const logInPost = (module.exports = {
+  homePageGet,
+  signUpGet,
+  signUpPost,
+  logInGet,
+  newPostGet,
+  newPostAdd,
+});

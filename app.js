@@ -13,6 +13,7 @@ const PORT = process.env.PORT;
 const indexRouter = require("./routes/indexRouter");
 const signUpRouter = require("./routes/signUpRouter");
 const logInRouter = require("./routes/logInRouter");
+const newPostRouter = require("./routes/newPostRouter");
 
 const app = express();
 
@@ -78,7 +79,7 @@ app.use((req, res, next) => {
 app.use("/", indexRouter);
 app.use("/signup", signUpRouter);
 app.use("/login", logInRouter);
-// app.use("/new-post", newPostRouter);
+app.use("/new-post", newPostRouter);
 
 app.listen(PORT, (err) => {
   if (err) {

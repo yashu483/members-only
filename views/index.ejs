@@ -21,7 +21,16 @@
       <section id="posts-section">
         <h2>Recent Posts</h2>
         <div class="posts-container">
-          <p><em>No posts yet. Be the first</em></p>
+          <% if(locals.posts.length === 0 ){ %>
+            <p><em>No posts yet. Be the first</em></p>
+
+         <% } else{ %>
+          <% locals.posts.forEach((post) => { %>
+            <%- include('partials/post-card', {post: post}) %>
+
+         <% }) %>
+
+        <% }%>
         </div>
       </section>
     </main>
