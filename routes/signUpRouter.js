@@ -3,9 +3,7 @@ const controller = require("./../controllers/controller");
 
 const signUpRouter = Router();
 
-signUpRouter.get("/", (req, res, next) => {
-  res.render("sign-up");
-});
+signUpRouter.get("/", controller.signUpGet);
 
 signUpRouter.post("/", controller.signUpPost);
 

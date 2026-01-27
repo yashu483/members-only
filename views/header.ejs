@@ -3,5 +3,10 @@
     <h1 id="logo">Members Only</h1>
     <button type="button" id="header-menu-button"></button>
   </div>
-  <%- include('partials/nav-logged-in') %>
+  <% if(locals.currentUser){ %>
+    <%- include('partials/nav-logged-in') %>
+  <%} else{ %>
+<%- include('partials/nav-no-loggedin') %>
+
+  <% } %>
 </header>

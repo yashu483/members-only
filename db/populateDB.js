@@ -28,6 +28,15 @@ FOREIGN KEY (user_id) REFERENCES users(id),
 CHECK(length(title) <= 400)
 );`;
 
+// adding first default admin+ user
+const firstUser = {
+  firstName: process.env.FIRST_NAME,
+  lastName: process.env.LAST_NAME,
+  username: process.env.USERNAME,
+  password: process.env.AC_PASS,
+};
+const userSQL = `INSERT INTO users (first_name, last_name, username, password, is_admin_plus) VALUES($1, $2, $3, $4, true) ON CONFLICT (username) DO NOTHING;`;
+
 const main = async () => {
   const client = new Client({
     connectionString: process.env.DATABASE_URL,
@@ -38,6 +47,12 @@ const main = async () => {
     await client.connect();
     await client.query("BEGIN");
     await client.query(SQL);
+    await client.query(userSQL, [
+      firstUser.firstName,
+      firstUser.lastName,
+      firstUser.username,
+      firstUser.password,
+    ]);
     await client.query("COMMIT");
     await client.end();
   } catch (err) {
