@@ -1,11 +1,9 @@
 html[data-theme="light"] {
-  --main-bg-color: rgb(243, 244, 246);
   --nav-button-text-color: white;
   --sign-up-bg: rgb(0, 166, 63);
   --log-in-bg: rgb(23, 93, 249);
 }
 html[data-theme="dark"] {
-  --main-bg-color: inherit;
   --sign-up-bg: #393567;
   --log-in-bg: rgb(48, 48, 48);
   --sign-up-border: 1px solid white;
@@ -17,14 +15,8 @@ html {
 
 body {
   display: grid;
-  /* color: var(--nav-button-text-color); */
   grid-template-rows: auto 1fr auto;
   box-sizing: border-box;
-}
-
-main {
-  padding: 5px 15px;
-  background-color: var(--main-bg-color);
 }
 
 div#info-div * {
@@ -61,9 +53,7 @@ div#info-div > div > a.sign-up {
   display: flex;
   flex-direction: column;
 }
-/* #posts-section > h2 {
-  padding-top: 20px;
-} */
+
 #posts-section > div.posts-container {
   border: 1px solid rgb(128, 128, 128, 0.5);
   border-radius: 5px;

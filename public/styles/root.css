@@ -36,12 +36,14 @@ html[data-theme="light"] {
   --heading-border: none;
   --menu-button-src: url("./../icons/menu-black-30.svg");
   --menu-button-bg: white;
+  --main-bg-color: rgb(243, 244, 246);
 }
 html[data-theme="dark"] {
   --heading-background-color: black;
   --heading-border: 2px solid white;
   --menu-button-src: url("./../icons/menu-white-30.svg");
   --menu-button-bg: black;
+  --main-bg-color: rgb(27, 27, 27);
 }
 html {
   padding: 0;
@@ -50,6 +52,9 @@ html {
 }
 
 body {
+  grid-template-rows: auto 1fr auto;
+  box-sizing: border-box;
+  display: grid;
   margin: 0;
   min-height: 100vh;
 }
@@ -58,8 +63,7 @@ header {
   display: flex;
   flex-direction: column;
   padding: 5px 15px;
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 87px;
-  border-bottom: 1px solid rgb(128, 128, 128, 0.5);
+  border-bottom: 3px solid rgba(185, 184, 184, 0.5);
 }
 
 header > div:nth-of-type(1) {
@@ -115,7 +119,10 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
-  border-top: 1px solid rgb(128, 128, 128, 0.5);
+  border-top: 3px solid rgba(185, 184, 184, 0.5);
 }
-footer > p {
+
+main {
+  padding: 5px 15px;
+  background-color: var(--main-bg-color);
 }
