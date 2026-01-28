@@ -31,6 +31,7 @@ app.use(
     secret: "I am yashu",
     resave: false,
     saveUninitialized: false,
+    expires: 24 * 60 * 60 * 1000,
   }),
 );
 app.use(passport.session());

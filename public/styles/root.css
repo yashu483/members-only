@@ -31,6 +31,18 @@
   box-sizing: border-box;
 }
 
+html[data-theme="light"] {
+  --heading-background-color: blue;
+  --heading-border: none;
+  --menu-button-src: url("./../icons/menu-black-30.svg");
+  --menu-button-bg: white;
+}
+html[data-theme="dark"] {
+  --heading-background-color: black;
+  --heading-border: 2px solid white;
+  --menu-button-src: url("./../icons/menu-white-30.svg");
+  --menu-button-bg: black;
+}
 html {
   padding: 0;
   margin: 0;
@@ -59,7 +71,8 @@ header > div:nth-of-type(1) {
 header h1#logo {
   font-family: "Rubik Moonrocks", "Inter", "Roboto", "Google Sans";
   color: white;
-  background-color: blue;
+  background-color: var(--heading-background-color);
+  border: var(--heading-border);
   padding: 5px 10px;
   border-radius: 10px;
 }
@@ -72,12 +85,12 @@ header button#header-menu-button {
   height: 30px;
   border: none;
   border-radius: 30px;
-  background-image: url("./../icons/menu-black-30.svg");
+  background-image: var(--menu-button-src);
   background-repeat: no-repeat;
   background-size: 100% 100%;
   background-position: center;
   background-origin: border-box;
-  background-color: white;
+  background-color: var(--menu-button-bg);
 }
 
 header nav#header-nav {
@@ -88,6 +101,14 @@ nav#header-nav > a {
   text-align: center;
   text-decoration: none;
   color: inherit;
+  padding: 10px;
+}
+
+nav#header-nav > button#theme-toggle {
+  background-color: inherit;
+  border: none;
+  font-size: 1rem;
+  margin: 5px auto;
   padding: 10px;
 }
 footer {

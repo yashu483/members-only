@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <%- include('common-dependencies') %>
     <link rel="stylesheet" href="./styles/index.css" />
+
     <title>Members Only</title>
   </head>
   <body>
@@ -29,7 +30,10 @@
      
       <section id="posts-section">
         <h2>Recent Posts</h2>
-        <a href="/new-post" class="new-message-button">New Message</a>
+        <% if(locals.currentUser) { %>
+          <a href="/new-post" class="new-message-button">New Message</a>
+
+        <% } %>
         <div class="posts-container">
           <% if(locals.posts.length === 0 ){ %>
             <p><em>No posts yet. Be the first</em></p>
