@@ -80,6 +80,14 @@ header h1#logo {
   padding: 5px 10px;
   border-radius: 10px;
 }
+.header-homepage-logo-link {
+  text-decoration: none;
+  height: min-content;
+}
+
+.header-homepage-logo-link:visited {
+  color: inherit;
+}
 
 .hidden {
   display: none !important;

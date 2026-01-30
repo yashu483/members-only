@@ -4,7 +4,7 @@ html[data-theme="light"] {
   --input-bg: rgb(232, 240, 253);
   --log-in-label: rgb(83, 83, 83);
   --input-border: 1px solid rgb(128, 128, 128, 0.5);
-  --submit-bg: rgb(23, 93, 249);
+  --submit-bg: rgb(0, 166, 63);
 }
 html[data-theme="dark"] {
   --log-in-bg: black;
