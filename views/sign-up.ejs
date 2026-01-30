@@ -4,62 +4,66 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <%- include('common-dependencies') %>
+    <link rel="stylesheet" href="./styles/signup.css" />
     <title>Register | Members Only</title>
   </head>
   <body>
     <%- include('header') %>
     <main>
-      <div>
-        <h1>Join the Club</h1>
-        <p>Create your account to get started</p>
-      </div>
-      <form action="/signup" method="POST">
-        <div>
-          <label for="firstName"
-            >First Name
-            <span class="required-tag" aria-label="required">*</span></label
-          ><input
-            type="text"
-            id="firstName"
-            name="firstName"
-            required
-            autocomplete="given-name"
-          />
+      <div class="wrapper">
+        <div class="signup-form-info">
+          <h1>Join the Club</h1>
+          <p>Create your account to get started</p>
         </div>
-        <div>
-          <label for="lastName">Last Name</label
-          ><input type="text" name="lastName" id="lastName" />
-        </div>
-        <div>
-          <label for="username"
-            >Username<span class="required-tag" aria-label="required"
-              >*</span
-            ></label
-          ><input
-            type="text"
-            name="username"
-            id="username"
-            autocomplete="username"
-            required
-          />
-        </div>
-        <div>
-          <label for="password">Password</label
-          ><input
-            type="password"
-            id="password"
-            name="password"
-            autocomplete="new-password"
-          />
-        </div>
-        <div>
-          <label for="confirmPass">Confirm Password</label
-          ><input type="password" id="confirmPass" name="confirmPass" />
-        </div>
-        <button type="submit">Create Account</button>
-      </form>
-      <div>
-        <p>Already have an account? <a href="/login">Sign in here</a></p>
+        <form action="/signup" method="POST" id="sign-up-form">
+          <div>
+            <label for="firstName"
+              >First Name
+              <span class="required-tag" aria-label="required">*</span></label
+            ><input
+              type="text"
+              id="firstName"
+              name="firstName"
+              required
+              autocomplete="given-name"
+            />
+          </div>
+          <div>
+            <label for="lastName">Last Name</label
+            ><input type="text" name="lastName" id="lastName" />
+          </div>
+          <div>
+            <label for="username"
+              >Username<span class="required-tag" aria-label="required"
+                >*</span
+              ></label
+            ><input
+              type="text"
+              name="username"
+              id="username"
+              autocomplete="username"
+              required
+            />
+          </div>
+          <div>
+            <label for="password">Password</label
+            ><input
+              type="password"
+              id="password"
+              name="password"
+              autocomplete="new-password"
+            />
+          </div>
+          <div>
+            <label for="confirmPass">Confirm Password</label
+            ><input type="password" id="confirmPass" name="confirmPass" />
+          </div>
+          <button type="submit">Create Account</button>
+        </form>
+
+        <p class="login-link">
+          Already have an account? <a href="/login">Sign in here</a>
+        </p>
       </div>
     </main>
     <%- include('footer') %>
