@@ -1,22 +1,24 @@
-<div>
-  <div>
-    <img src="" alt="" />
+<div class="role-applying-card">
+  <div class="role-details">
+    <div class="passkey-wrapper">
+      <img src="./icons/passkey-50.svg" alt="passkey sign" />
+    </div>
     <h2>Become an Admin</h2>
-    <p>Answer this question to unlock admin privileges.</p>
-    <p>What animal says 'meow' ?</p>
-    <form action="/roles/admin">
-      <div>
-        <label for="key">Your Answer</label
-        ><input
-          type="text"
-          name="key"
-          id="key"
-          required
-          disabled
-          placeholder="dog?"
-        />
-      </div>
-      <button type="submit" disabled>Submit Answer</button>
-    </form>
+    <p class="question">Answer this question to unlock admin privileges.</p>
+    <p class="quest-paragraph">What animal says 'meow' ?</p>
   </div>
+  <form action="/roles/admin" method="POST" class="role-form">
+    <div>
+      <label for="key">Your Answer</label
+      ><input
+        type="text"
+        name="key"
+        id="key"
+        required
+        disabled
+        placeholder="dog?"
+      />
+    </div>
+    <button type="submit" disabled>Submit Answer</button>
+  </form>
 </div>

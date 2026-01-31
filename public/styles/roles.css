@@ -1,0 +1,115 @@
+html[data-theme="light"] {
+  --card-bg: white;
+  --card-border: 1px solid rgba(185, 184, 184, 0.5);
+  --input-bg: rgb(232, 240, 253);
+  --card-label: rgb(83, 83, 83);
+  --input-border: 1px solid rgb(128, 128, 128, 0.5);
+  --submit-bg: rgb(23, 93, 249);
+  --disable-btn-bg: rgb(59, 8, 59);
+}
+html[data-theme="dark"] {
+  --card-bg: black;
+  --input-border: 1px solid white /* --input-bg: grey; */;
+  --card-border: 1px solid rgb(211, 208, 208, 0.5);
+  --submit-bg: rgb(57, 53, 103);
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.information > * {
+  text-align: center;
+}
+
+input {
+  padding: 5px 10px;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-family: inherit;
+}
+
+button[type="submit"] {
+  font-size: 1rem;
+  padding: 8px;
+  color: white;
+  background-color: var(--submit-bg);
+  font-weight: 700;
+  border-radius: 8px;
+  border: none;
+}
+
+.role-applying-card {
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+  background-color: white;
+  border: 1px solid rgba(185, 184, 184, 0.5);
+  border-radius: 8px;
+}
+
+.role-details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.passkey-wrapper {
+  background-color: rgb(218, 235, 255);
+  padding: 15px;
+  border-radius: 100px;
+}
+
+.quest-paragraph {
+  background-color: #f3f4f6;
+  width: 100%;
+  text-align: center;
+  padding: 20px;
+}
+.question {
+  color: oklch(44.6% 0.03 256.802);
+}
+
+.role-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.role-form > div {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.role-form > div > input {
+  padding: 8px 15px;
+}
+
+.role-form > button[type="submit"] {
+  padding: 8px;
+}
+
+/* 
+roles completed card styles */
+
+.role-complete {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: white;
+  border-radius: 8px;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+.sign-wrapper {
+  background-color: rgb(219, 253, 231);
+  padding: 15px;
+  border-radius: 100px;
+}
+
+.role-complete > p {
+  text-align: center;
+}

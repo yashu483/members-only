@@ -21,10 +21,8 @@ function setLightTheme() {
 }
 
 const currentTheme = document.documentElement.getAttribute("data-theme");
-console.log(currentTheme);
 if (currentTheme === "dark") {
   toggle.textContent = "Light Theme";
-  console.log(currentTheme);
 } else {
   toggle.textContent = "Dark Theme";
 }

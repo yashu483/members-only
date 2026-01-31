@@ -4,18 +4,21 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <%- include('common-dependencies') %>
+    <link rel="stylesheet" href="./styles/roles.css" />
     <title>Apply Role | Members only</title>
   </head>
   <body>
+    <%- include('header') %>
     <main>
-      <%- include('header') %>
-      <h1>Apply for Roles</h1>
-      <p>
-        Unlock exclusive features, see member details and delete or modify your
-        posts
-      </p>
-      <%- include('partials/membership-card') %> <%-
-      include('partials/admin-card') %>
+      <div class="information">
+        <h1>Apply for Roles</h1>
+        <p>
+          Unlock exclusive features, see member details, delete or modify your
+          posts and many more with new roles
+        </p>
+      </div>
+      <%- include('partials/membership-complete') %> <%-
+      include('partials/admin-complete') %>
     </main>
     <%- include('footer') %>
   </body>

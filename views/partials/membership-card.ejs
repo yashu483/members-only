@@ -1,11 +1,15 @@
-<div class="membership-applying-card">
-  <div>
-    <div><img src="" alt="" /></div>
+<div class="role-applying-card">
+  <div class="role-details">
+    <div class="passkey-wrapper">
+      <img src="./icons/passkey-50.svg" alt="passkey sign" />
+    </div>
     <h2>Become a member</h2>
-    <p>Answer this simple question to unlock member privileges</p>
+    <p class="question">
+      Answer this simple question to unlock member privileges
+    </p>
     <p class="quest-paragraph">What is 10 + 10 ?</p>
   </div>
-  <form action="/role/member" method="POST">
+  <form action="/role/member" method="POST" class="role-form">
     <div>
       <label for="key">Your answer</label
       ><input
