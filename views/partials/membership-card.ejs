@@ -9,8 +9,11 @@
     </p>
     <p class="quest-paragraph">What is 10 + 10 ?</p>
   </div>
-  <form action="/role/member" method="POST" class="role-form">
+  <form action="/roles/member" method="POST" class="role-form">
     <div>
+        <% if(memberAuthErr) { %>
+    <p class="auth-error-msg"><%= memberAuthErr %></p>
+  <% }  %>
       <label for="key">Your answer</label
       ><input
         type="number"

@@ -87,6 +87,9 @@ button[type="submit"] {
 .role-form > button[type="submit"] {
   padding: 8px;
 }
+.auth-error-msg {
+  color: red;
+}
 
 /* 
 roles completed card styles */

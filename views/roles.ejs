@@ -17,8 +17,9 @@
           posts and many more with new roles
         </p>
       </div>
-      <%- include('partials/membership-card') %> <%-
-      include('partials/admin-card') %>
+      <%- locals.currentUser.is_member ? include('partials/membership-complete')
+      : include('partials/membership-card', {memberAuthErr: locals.memberAuthErr}) %> <%- locals.currentUser.is_admin ?
+      include('partials/admin-complete') : include('partials/admin-card', {adminAuthErr: locals.adminAuthErr}) %>
     </main>
     <%- include('footer') %>
   </body>

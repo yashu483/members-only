@@ -51,19 +51,34 @@ const createPost = async (post) => {
     [post.title, post.message, post.userId],
   );
 };
-module.exports = {
-  getUserFromUsername,
-  getUserFromId,
-  addUser,
-  checkUsernameAvailability,
-  getAllPosts,
-  createPost,
-};
 
 // auth answer table queries
 
 const getMembershipKey = async () => {
   const { rows } = await pool.query(
-    'SELECT value FROM authorization_answers WHERE role_name = "member"',
+    "SELECT value FROM authorization_answers WHERE role_name = $1",
+    ["member"],
   );
+
+  return rows[0]?.value || null;
+};
+
+const getAdminRoleKey = async () => {
+  const { rows } = await pool.query(
+    "SELECT value FROM authorization_answers WHERE role_name = $1",
+    ["admin"],
+  );
+  return rows[0]?.value || null;
+};
+module.exports = {
+  getUserFromUsername,
+  getUserFromId,
+  addUser,
+  checkUsernameAvailability,
+  grantAdminRole,
+  grantMembership,
+  getAllPosts,
+  createPost,
+  getMembershipKey,
+  getAdminRoleKey,
 };

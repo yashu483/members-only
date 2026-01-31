@@ -9,16 +9,22 @@
   </div>
   <form action="/roles/admin" method="POST" class="role-form">
     <div>
+      <% if(adminAuthErr){ %>
+        <p class="auth-error-msg"><%= adminAuthErr %></p>
+      <% } %>
       <label for="key">Your Answer</label
       ><input
         type="text"
         name="key"
         id="key"
         required
-        disabled
         placeholder="dog?"
+        maxlength="20"
+        <%= !locals.currentUser.is_member ? 'disabled': '' %>
       />
     </div>
-    <button type="submit" disabled>Submit Answer</button>
+    <button type="submit" 
+            <%= !locals.currentUser.is_member ? 'disabled': '' %>
+        >Submit Answer</button>
   </form>
 </div>
