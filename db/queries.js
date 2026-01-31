@@ -59,3 +59,11 @@ module.exports = {
   getAllPosts,
   createPost,
 };
+
+// auth answer table queries
+
+const getMembershipKey = async () => {
+  const { rows } = await pool.query(
+    'SELECT value FROM authorization_answers WHERE role_name = "member"',
+  );
+};

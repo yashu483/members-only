@@ -5,13 +5,16 @@ html[data-theme="light"] {
   --card-label: rgb(83, 83, 83);
   --input-border: 1px solid rgb(128, 128, 128, 0.5);
   --submit-bg: rgb(23, 93, 249);
-  --disable-btn-bg: rgb(59, 8, 59);
+  --quest-bg: #f3f4f6;
+  --question: oklch(44.6% 0.03 256.802);
 }
 html[data-theme="dark"] {
   --card-bg: black;
   --input-border: 1px solid white /* --input-bg: grey; */;
   --card-border: 1px solid rgb(211, 208, 208, 0.5);
   --submit-bg: rgb(57, 53, 103);
+  --quest-bg: rgb(65, 65, 65);
+  --question: rgb(177, 177, 177);
 }
 
 main {
@@ -24,13 +27,6 @@ main {
   text-align: center;
 }
 
-input {
-  padding: 5px 10px;
-  border-radius: 8px;
-  font-size: 1rem;
-  font-family: inherit;
-}
-
 button[type="submit"] {
   font-size: 1rem;
   padding: 8px;
@@ -41,12 +37,13 @@ button[type="submit"] {
   border: none;
 }
 
+/* role applying styles */
 .role-applying-card {
   display: flex;
   flex-direction: column;
   padding: 30px;
-  background-color: white;
-  border: 1px solid rgba(185, 184, 184, 0.5);
+  background-color: var(--card-bg);
+  border: var(--card-border);
   border-radius: 8px;
 }
 
@@ -63,13 +60,13 @@ button[type="submit"] {
 }
 
 .quest-paragraph {
-  background-color: #f3f4f6;
+  background-color: var(--quest-bg);
   width: 100%;
   text-align: center;
   padding: 20px;
 }
 .question {
-  color: oklch(44.6% 0.03 256.802);
+  color: var(--question);
 }
 
 .role-form {
@@ -98,7 +95,8 @@ roles completed card styles */
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: white;
+  background-color: var(--card-bg);
+  border: var(--card-border);
   border-radius: 8px;
   padding: 10px;
   margin-bottom: 20px;
