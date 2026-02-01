@@ -10,39 +10,40 @@
   <body>
     <%- include('header') %>
     <main>
-      <div class="log-in-form-details">
-        <h1>Welcome back</h1>
-        <p>Sign in to your account</p>
-      </div>
-      <form action="/login" method="POST" id="log-in-form">
-         <% if(locals.error){ %>
-          <p>Incorrect username or password</p>
-
-         <%} %>
-        <div>
-          <label for="username">Username</label
-          ><input
-            type="text"
-            id="username"
-            name="username"
-            autocomplete="username"
-            required
-          />
+      <div class="main-wrapper">
+        <div class="log-in-form-details">
+          <h1>Welcome back</h1>
+          <p>Sign in to your account</p>
         </div>
-        <div>
-          <label for="password">Password</label
-          ><input
-            type="password"
-            id="password"
-            name="password"
-            autocomplete="current-password"
-            required
-          />
+        <form action="/login" method="POST" id="log-in-form">
+           <% if(locals.error){ %>
+            <p>Incorrect username or password</p>
+           <%} %>
+          <div>
+            <label for="username">Username</label
+            ><input
+              type="text"
+              id="username"
+              name="username"
+              autocomplete="username"
+              required
+            />
+          </div>
+          <div>
+            <label for="password">Password</label
+            ><input
+              type="password"
+              id="password"
+              name="password"
+              autocomplete="current-password"
+              required
+            />
+          </div>
+          <button type="submit">Sign In</button>
+        </form>
+        <div class="sign-up-link">
+          <p>Don't have an account? <a href="/signup">Register now</a></p>
         </div>
-        <button type="submit">Sign In</button>
-      </form>
-      <div class="sign-up-link">
-        <p>Don't have an account? <a href="/signup">Register now</a></p>
       </div>
     </main>
     <%- include('footer') %>

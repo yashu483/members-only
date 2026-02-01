@@ -17,11 +17,6 @@ html[data-theme="dark"] {
   --cancel-color: inherit;
 }
 
-.wrapper {
-  display: flex;
-  flex-direction: column;
-}
-
 .form-detail > * {
   text-align: center;
 }

@@ -12,11 +12,6 @@ html[data-theme="dark"] {
   --log-in-border: 1px solid rgb(211, 208, 208, 0.5);
   --submit-bg: rgb(57, 53, 103);
 }
-
-.wrapper {
-  display: flex;
-  flex-direction: column;
-}
 .signup-form-info > * {
   text-align: center;
 }

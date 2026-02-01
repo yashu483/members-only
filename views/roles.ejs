@@ -10,16 +10,18 @@
   <body>
     <%- include('header') %>
     <main>
-      <div class="information">
-        <h1>Apply for Roles</h1>
-        <p>
-          Unlock exclusive features, see member details, delete or modify your
-          posts and many more with new roles
-        </p>
+      <div class="main-wrapper">
+        <div class="information">
+          <h1>Apply for Roles</h1>
+          <p>
+            Unlock exclusive features, see member details, delete or modify your
+            posts and many more with new roles
+          </p>
+        </div>
+        <%- locals.currentUser.is_member ? include('partials/membership-complete')
+        : include('partials/membership-card', {memberAuthErr: locals.memberAuthErr}) %> <%- locals.currentUser.is_admin ?
+        include('partials/admin-complete') : include('partials/admin-card', {adminAuthErr: locals.adminAuthErr}) %>
       </div>
-      <%- locals.currentUser.is_member ? include('partials/membership-complete')
-      : include('partials/membership-card', {memberAuthErr: locals.memberAuthErr}) %> <%- locals.currentUser.is_admin ?
-      include('partials/admin-complete') : include('partials/admin-card', {adminAuthErr: locals.adminAuthErr}) %>
     </main>
     <%- include('footer') %>
   </body>

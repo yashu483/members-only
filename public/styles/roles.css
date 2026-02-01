@@ -17,12 +17,6 @@ html[data-theme="dark"] {
   --question: rgb(177, 177, 177);
 }
 
-main {
-  display: flex;
-  flex-direction: column;
-  gap: 30px;
-}
-
 .information > * {
   text-align: center;
 }
