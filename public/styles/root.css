@@ -40,6 +40,7 @@ html[data-theme="light"] {
   --input-placeholder: gray;
   --button-hover-border: none;
   --navigation-links: oklch(44.6% 0.03 256.802);
+  --toggle-big-bg: url("./../icons/light-50-black.svg");
 }
 html[data-theme="dark"] {
   --heading-background-color: black;
@@ -51,6 +52,7 @@ html[data-theme="dark"] {
   --button-hover-border: 2px solid blue;
   --button-hover-shadow: 2px 2px 2px blue, -2px -2px 2px blue;
   --navigation-links: rgb(255, 255, 255, 0.8);
+  --toggle-big-bg: url("./../icons/dark-50-white.svg");
 }
 html {
   padding: 0;
@@ -261,7 +263,7 @@ main {
     height: 40px;
     border-radius: 40px;
     background-color: inherit;
-    background-image: url("./../icons/light-50-black.svg");
+    background-image: var(--toggle-big-bg);
     background-repeat: no-repeat;
     background-position: center;
     background-size: 100% 100%;
