@@ -7,12 +7,19 @@ html[data-theme="light"] {
   --submit-bg: rgb(23, 93, 249);
   --quest-bg: #f3f4f6;
   --question: oklch(44.6% 0.03 256.802);
+  --sign-up-bgimg: none;
 }
 html[data-theme="dark"] {
+  --sign-up-bgimg: linear-gradient(
+    to right,
+    #4b6cb7 0%,
+    #182848 51%,
+    #4b6cb7 100%
+  );
   --card-bg: black;
   --input-border: 1px solid white /* --input-bg: grey; */;
   --card-border: 1px solid rgb(211, 208, 208, 0.5);
-  --submit-bg: rgb(57, 53, 103);
+  --submit-bg: none;
   --quest-bg: rgb(65, 65, 65);
   --question: rgb(177, 177, 177);
 }
@@ -26,6 +33,7 @@ button[type="submit"] {
   padding: 8px;
   color: white;
   background-color: var(--submit-bg);
+  background-image: var(--sign-up-bgimg);
   font-weight: 700;
   border-radius: 8px;
   border: none;
@@ -39,6 +47,7 @@ button[type="submit"] {
   background-color: var(--card-bg);
   border: var(--card-border);
   border-radius: 8px;
+  margin-bottom: 20px;
 }
 
 .role-details {

@@ -7,12 +7,19 @@ html[data-theme="light"] {
   --submit-bg: rgb(23, 93, 249);
   --cancel-bg: rgb(165, 164, 164);
   --cancel-color: rgb(49, 49, 49);
+  --sign-up-bgimg: none;
 }
 html[data-theme="dark"] {
+  --sign-up-bgimg: linear-gradient(
+    to right,
+    #4b6cb7 0%,
+    #182848 51%,
+    #4b6cb7 100%
+  );
   --log-in-bg: black;
   --input-border: 1px solid white /* --input-bg: grey; */;
   --log-in-border: 1px solid rgb(211, 208, 208, 0.5);
-  --submit-bg: rgb(57, 53, 103);
+  --submit-bg: none;
   --cancel-bg: rgb(165, 164, 164);
   --cancel-color: inherit;
 }
@@ -68,6 +75,7 @@ html[data-theme="dark"] {
 
 #new-post-form button {
   background-color: var(--submit-bg);
+  background-image: var(--sign-up-bgimg);
 }
 .cancel-button {
   text-align: center;

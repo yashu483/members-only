@@ -5,12 +5,19 @@ html[data-theme="light"] {
   --log-in-label: rgb(83, 83, 83);
   --input-border: 1px solid rgb(128, 128, 128, 0.5);
   --submit-bg: rgb(23, 93, 249);
+  --log-in-bgimg: none;
 }
 html[data-theme="dark"] {
+  --log-in-bgimg: linear-gradient(
+    to right,
+    #16222a 0%,
+    #3a6073 51%,
+    #16222a 100%
+  );
   --log-in-bg: black;
   --input-border: 1px solid white /* --input-bg: grey; */;
   --log-in-border: 1px solid rgb(211, 208, 208, 0.5);
-  --submit-bg: rgb(57, 53, 103);
+  --submit-bg: none;
 }
 
 main {
@@ -55,6 +62,7 @@ main {
   font-size: 1rem;
   padding: 8px;
   background-color: var(--submit-bg);
+  background-image: var(--log-in-bgimg);
   color: white;
   font-weight: 700;
   border-radius: 8px;

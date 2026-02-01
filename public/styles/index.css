@@ -2,10 +2,24 @@ html[data-theme="light"] {
   --nav-button-text-color: white;
   --sign-up-bg: rgb(0, 166, 63);
   --log-in-bg: rgb(23, 93, 249);
+  --log-in-bgimg: none;
+  --sign-up-bgimg: none;
 }
 html[data-theme="dark"] {
-  --sign-up-bg: #393567;
-  --log-in-bg: rgb(48, 48, 48);
+  --sign-up-bg: none;
+  --log-in-bg: none;
+  --log-in-bgimg: linear-gradient(
+    to right,
+    #16222a 0%,
+    #3a6073 51%,
+    #16222a 100%
+  );
+  --sign-up-bgimg: linear-gradient(
+    to right,
+    #4b6cb7 0%,
+    #182848 51%,
+    #4b6cb7 100%
+  );
   --sign-up-border: 1px solid white;
 }
 
@@ -51,10 +65,13 @@ div#info-div > div > a {
 div#info-div > div > a.log-in {
   background-color: var(--log-in-bg);
   border: var(--sign-up-border);
+  background-image: var(--log-in-bgimg);
 }
+
 div#info-div > div > a.sign-up {
   background-color: var(--sign-up-bg);
   border: var(--sign-up-border);
+  background-image: var(--sign-up-bgimg);
 }
 #posts-section {
   display: flex;
@@ -70,7 +87,8 @@ div#info-div > div > a.sign-up {
 .new-message-button {
   text-decoration: none;
   color: white;
-  background-color: blue;
+  background-color: var(--log-in-bg);
+  background-image: var(--log-in-bgimg);
   padding: 10px;
   text-align: center;
   margin-bottom: 30px;

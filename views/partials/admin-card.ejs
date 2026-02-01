@@ -5,6 +5,9 @@
     </div>
     <h2>Become an Admin</h2>
     <p class="question">Answer this question to unlock admin privileges.</p>
+    <% if(!locals.currentUser.is_member){ %>
+      <p class="question" style="color: red;"><em>Note: You need to become a member to be able to apply for admin role. Following form will be disabled until you are a member</em></p>
+    <% } %>
     <p class="quest-paragraph">What animal says 'meow' ?</p>
   </div>
   <form action="/roles/admin" method="POST" class="role-form">
@@ -23,7 +26,7 @@
         <%= !locals.currentUser.is_member ? 'disabled': '' %>
       />
     </div>
-    <button type="submit" 
+    <button type="submit" class="btn-grad2"
             <%= !locals.currentUser.is_member ? 'disabled': '' %>
         >Submit Answer</button>
   </form>
