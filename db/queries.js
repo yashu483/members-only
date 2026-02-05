@@ -52,6 +52,15 @@ const createPost = async (post) => {
   );
 };
 
+// join queries
+
+const getPostData = async () => {
+  const { rows } = await pool.query(
+    "SELECT posts.title, posts.message, posts.id , posts.user_id, posts.created_at, users.username, users.is_member, users.is_admin, users.is_admin_plus FROM posts INNER JOIN users ON posts.user_id = users.id ORDER BY posts.created_at DESC;",
+  );
+  return rows;
+};
+
 // auth answer table queries
 
 const getMembershipKey = async () => {
@@ -79,6 +88,7 @@ module.exports = {
   grantMembership,
   getAllPosts,
   createPost,
+  getPostData,
   getMembershipKey,
   getAdminRoleKey,
 };

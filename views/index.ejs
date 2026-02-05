@@ -1,49 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <%- include('common-dependencies') %>
-    <link rel="stylesheet" href="./styles/index.css" />
 
-    <title>Members Only</title>
-  </head>
-  <body>
-    <%- include('header') %>
-    <main>
-      <div class="main-wrapper">
-        <% if(!locals.currentUser) { %>
-        <div id="info-div">
-          <h1>Welcome to Members Only!</h1>
-          <p>A private clubhouse for exclusive conversations</p>
-          <div>
-            <a href="/login" class="log-in btn-grad"> Log In </a
-            ><a href="/signup" class="sign-up btn-grad2"> Register </a>
-          </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <%- include('common-dependencies') %>
+  <link rel="stylesheet" href="./styles/index.css" />
+  <link rel="stylesheet" href="./styles/post-menu.css">
+  <title>Members Only</title>
+</head>
+
+<body>
+  <%- include('header') %>
+  <main>
+    <div class="main-wrapper">
+      <% if(!locals.currentUser) { %>
+      <div id="info-div">
+        <h1>Welcome to Members Only!</h1>
+        <p>A private clubhouse for exclusive conversations</p>
+        <div>
+          <a href="/login" class="log-in btn-grad"> Log In </a><a href="/signup" class="sign-up btn-grad2"> Register </a>
         </div>
-        <% } else { %>
-          <div id="info-div">
-            <h1>Welcome back, <%= locals.currentUser.first_name %></h1>
-            <p> Share your thoughts with the community</p>
-          </div>
-             <% } %>
-        <section id="posts-section">
-          <h2>Recent Posts</h2>
-          <% if(locals.currentUser) { %>
-            <a href="/new-post" class="new-message-button btn-grad">New Message</a>
-          <% } %>
-          <div class="posts-container">
-            <% if(locals.posts.length === 0 ){ %>
-              <p><em>No posts yet. Be the first</em></p>
-           <% } else{ %>
-            <% locals.posts.forEach((post) => { %>
-              <%- include('partials/post-card', {post: post}) %>
-           <% }) %>
-          <% }%>
-          </div>
-        </section>
       </div>
-    </main>
-    <%- include('footer') %>
-  </body>
+      <% } else { %>
+      <div id="info-div">
+        <h1>Welcome back, <%= locals.currentUser.first_name %></h1>
+        <p> Share your thoughts with the community</p>
+      </div>
+      <% } %>
+      <section id="posts-section">
+        <h2>Recent Posts</h2>
+        <% if(locals.currentUser) { %>
+        <a href="/new-post" class="new-message-button btn-grad">New Message</a>
+        <% } %>
+        <div class="posts-container">
+          <% if(locals.posts.length === 0 ){ %>
+          <p><em>No posts yet. Be the first</em></p>
+          <% } else{ %>
+          <% locals.posts.forEach((post) => { %>
+          <%- include('partials/post-card', {post: post}) %>
+          <% }) %>
+          <% }%>
+        </div>
+      </section>
+    </div>
+  </main>
+  <%- include('footer') %>
+</body>
+
 </html>

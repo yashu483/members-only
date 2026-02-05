@@ -66,9 +66,15 @@ const validateSignUpData = [
 
 // homepage controller
 const homePageGet = async (req, res) => {
-  const posts = await db.getAllPosts();
+  const posts = await db.getPostData();
+  const removeTimeFromPost = posts.map((post) => ({
+    ...post,
+    created_at: post.created_at
+      ? post.created_at.toISOString().split("T")[0]
+      : null,
+  }));
 
-  res.render("index", { posts: posts });
+  res.render("index", { posts: removeTimeFromPost });
 };
 
 // signup page controller

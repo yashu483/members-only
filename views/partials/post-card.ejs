@@ -1,10 +1,28 @@
-<div class="post-card">
-  <div>
-    <p><span></span><span></span></p>
-    <span></span>
+<div class="post-card post">
+  <div class="post-card-user-info">
+    <p>
+      <span class="post-username"><%= post.username %></span>
+      <span class="post-date"><%= post.created_at %></span>
+      <% if(post.is_member) { %>
+      <span class="post-user-role <%= post.is_admin? 'admin' : 'member' %>"><%= post.is_admin? 'ADMIN' : post.is_member? 'MEMBER' : '' %></span>
+      <% } %>
+    </p>
+    <div class="post-card-button-container">
+      <button type="button" class="kebab-btn" aria-label="More Options"> &#8942; </button>
+      <div class="post-menu">
+        <button type="button" class="post-card-buttons delete" aria-label="Delete button">
+          Delete
+        </button>
+        <button type="button" class="post-card-buttons" aria-label="Edit button">
+
+          Edit
+        </button>
+      </div>
+    </div>
   </div>
-  <div>
-    <h3></h3>
-    <p></p>
+  <div class="post-card-data">
+    <h3><%= post.title %></h3>
+    <p><%= post.message %></p>
   </div>
+
 </div>
