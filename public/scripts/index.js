@@ -6,17 +6,22 @@ menuButton.addEventListener("click", (e) => {
   navButtons.classList.toggle("hidden");
 });
 
-const kebabBtn = document.querySelector(".kebab-btn");
-const menu = document.querySelector(".post-menu");
+const kebabBtn = document.querySelectorAll(".kebab-btn");
+const menu = document.querySelectorAll(".post-menu");
 
-kebabBtn.addEventListener("click", (e) => {
-  e.stopPropagation();
-  menu.classList.toggle("open");
+let openedMenu = 0;
+
+kebabBtn.forEach((button, index) => {
+  button.addEventListener("click", (e) => {
+    e.stopPropagation();
+    menu[index].classList.toggle("open");
+    openedMenu = index;
+  });
 });
 
 document.addEventListener("click", closeMenu);
 document.addEventListener("touchstart", closeMenu);
 
 function closeMenu() {
-  menu.classList.remove("open");
+  menu[openedMenu].classList.remove("open");
 }

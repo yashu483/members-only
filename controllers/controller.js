@@ -119,7 +119,12 @@ const logInGet = (req, res) => {
 // new-post page controller
 
 const newPostGet = (req, res) => {
-  res.render("new-post");
+  console.log(req.user);
+  if (req.user.is_member) {
+    res.render("new-post");
+    return;
+  }
+  res.redirect("/roles");
 };
 
 const validateNewPost = [

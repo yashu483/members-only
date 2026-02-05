@@ -1,32 +1,34 @@
 <header>
   <div class="header-wrapper">
     <div>
-        <h1 id="logo"><a href="/" class="header-homepage-logo-link">Members Only</a></h1>
-    
+      <h1 id="logo"><a href="/" class="header-homepage-logo-link">Members Only</a></h1>
+
       <button type="button" id="header-menu-button"></button>
-          <% if(locals.currentUser){ %>
-            <nav class="nav-big-screen">
-                <div class="navigation-links">
-                  <a href="/">Home</a>
-                  <a href="/new-post">New Message</a>
-                  <a href="/roles">Memberships</a>
-                  <a href="/logout">Logout</a>
-                </div>
-                <button type="click" id="theme-toggle-big"></button>
-              </nav>
-          <%} else{ %>
-             <nav class="nav-big-screen">
-                <div class="navigation-links">
-                  <a href="/">Home</a>
-                  <a href="/login">Log In</a>
-                  <a href="/signup">Register</a>
-                </div>
-                <button type="button" id="theme-toggle-big"></button>
-              </nav>
+      <% if(locals.currentUser){ %>
+      <nav class="nav-big-screen">
+        <div class="navigation-links">
+          <a href="/">Home</a>
+          <% if(locals.currentUser.is_member) { %>
+          <a href="/new-post">New Message</a>
           <% } %>
+          <a href="/roles">Memberships</a>
+          <a href="/logout">Logout</a>
+        </div>
+        <button type="click" id="theme-toggle-big"></button>
+      </nav>
+      <%} else{ %>
+      <nav class="nav-big-screen">
+        <div class="navigation-links">
+          <a href="/">Home</a>
+          <a href="/login">Log In</a>
+          <a href="/signup">Register</a>
+        </div>
+        <button type="button" id="theme-toggle-big"></button>
+      </nav>
+      <% } %>
     </div>
     <% if(locals.currentUser){ %>
-      <%- include('partials/nav-logged-in') %>
+    <%- include('partials/nav-logged-in') %>
     <%} else{ %>
     <%- include('partials/nav-no-loggedin') %>
     <% } %>

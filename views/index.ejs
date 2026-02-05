@@ -30,15 +30,19 @@
       <% } %>
       <section id="posts-section">
         <h2>Recent Posts</h2>
-        <% if(locals.currentUser) { %>
+        <% if(locals.currentUser && locals.currentUser.is_member) { %>
         <a href="/new-post" class="new-message-button btn-grad">New Message</a>
+        <% }else if(locals.currentUser){ %>
+        <h4>
+          <em>You must be a member to be able to send messages. <a href="/roles">Click Here</a> to apply for membership.</em>
+        </h4>
         <% } %>
         <div class="posts-container">
           <% if(locals.posts.length === 0 ){ %>
           <p><em>No posts yet. Be the first</em></p>
           <% } else{ %>
           <% locals.posts.forEach((post) => { %>
-          <%- include('partials/post-card', {post: post}) %>
+          <%- include('partials/post-card', {post: post, currentUser : locals.currentUser}) %>
           <% }) %>
           <% }%>
         </div>
