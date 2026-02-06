@@ -132,11 +132,11 @@ const logInGet = (req, res) => {
 
 const newPostGet = (req, res) => {
   console.log(req.user);
-  if (req.user.is_member) {
+  if (req.user && req.user.is_member) {
     res.render("new-post");
     return;
   }
-  res.redirect("/roles");
+  res.redirect("/");
 };
 
 const validateNewPost = [
