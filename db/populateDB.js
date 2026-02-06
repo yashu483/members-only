@@ -21,7 +21,6 @@ CREATE TABLE IF NOT EXISTS posts(
 id BIGINT PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
 title TEXT NOT NULL,
 message TEXT NOT NULL,
-is_premium BOOLEAN NOT NULL DEFAULT FALSE,
 user_id INTEGER,
 created_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
 FOREIGN KEY (user_id) REFERENCES users(id),
@@ -63,5 +62,5 @@ const main = async () => {
   }
 };
 
-// run node populate.js in terminal to execute the file
+// run 'node populate.js' in CLI to execute the file
 main();

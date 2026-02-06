@@ -40,10 +40,6 @@ const grantAdminRole = async (id) => {
 };
 
 // queries for posts table
-const getAllPosts = async () => {
-  const { rows } = await pool.query("SELECT * FROM posts");
-  return rows;
-};
 
 const createPost = async (post) => {
   await pool.query(
@@ -90,7 +86,6 @@ module.exports = {
   checkUsernameAvailability,
   grantAdminRole,
   grantMembership,
-  getAllPosts,
   createPost,
   deletePostById,
   getPostData,
