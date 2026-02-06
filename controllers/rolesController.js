@@ -21,8 +21,6 @@ const rolesApplyPost = async (req, res, next) => {
     const key = req.body.key;
 
     if (role === "member") {
-      console.log("member");
-      console.log(key, typeof key);
       if (key === "20") {
         await db.grantMembership(req.user.id);
         res.redirect("/roles");
@@ -37,7 +35,6 @@ const rolesApplyPost = async (req, res, next) => {
       }
       req.session.adminAuthErr = `Wrong answer. You typed "${key}". Hint: Passcode contains  3 letters`;
     }
-    console.log("none");
     res.redirect("/roles");
   } catch (err) {
     next(err);

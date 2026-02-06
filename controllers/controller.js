@@ -80,7 +80,6 @@ const homePageGet = async (req, res) => {
 const deleteGet = async (req, res, next) => {
   try {
     const { postid, userid } = req.params;
-    console.log(userid, postid, req.user.id);
     if (req.user && (userid === `${req.user.id}` || req.user.is_admin_plus)) {
       await db.deletePostById(postid);
     }
@@ -131,7 +130,6 @@ const logInGet = (req, res) => {
 // new-post page controller
 
 const newPostGet = (req, res) => {
-  console.log(req.user);
   if (req.user && req.user.is_member) {
     res.render("new-post");
     return;
