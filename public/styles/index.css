@@ -110,7 +110,8 @@ div#info-div > div > a {
 }
 
 .admin,
-.member {
+.member,
+.admin-plus {
   font-size: 0.9rem;
   padding: 4px 7px;
   border-radius: 6px;
@@ -123,6 +124,28 @@ div#info-div > div > a {
 .member {
   background-color: #dbeafe;
   color: #193cb8;
+}
+
+.admin-plus {
+  background-color: rgb(255, 246, 196);
+  color: orange;
+}
+
+.blur {
+  filter: blur(5px);
+  font-weight: 900;
+}
+
+.link-delete {
+  text-decoration: none;
+  color: inherit;
+  width: 100%;
+  margin: 0px;
+  width: 10%;
+}
+
+.link-delete:visited {
+  color: inherit;
 }
 
 @media screen and (min-width: 446px) {

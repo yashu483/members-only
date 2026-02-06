@@ -1,24 +1,28 @@
 <div class="post-card post">
   <div class="post-card-user-info">
-    <p>
+    <p class="<%= post.is_admin ? 'golden' : '' %>">
+      <% if(locals.currentUser){ %>
       <span class="post-username"><%= post.username %></span>
       <span class="post-date"><%= post.created_at %></span>
+      <% } else{ %>
+      <span class="post-username blur"><%= "#".repeat(post.username.length) %></span>
+      <span class="post-date blur"><%= "#".repeat(post.created_at.length) %></span>
+      <% }%>
       <% if(post.is_member) { %>
-      <span class="post-user-role <%= post.is_admin? 'admin' : 'member' %>"><%= post.is_admin? 'ADMIN' : post.is_member? 'MEMBER' : '' %></span>
+      <span class="post-user-role <%= post.is_admin_plus?'admin-plus': post.is_admin? 'admin' : 'member' %>"><%= post.is_admin_plus? 'ADMIN+': post.is_admin ? 'ADMIN' : post.is_member? 'MEMBER' : '' %></span>
       <% } %>
     </p>
     <div class="post-card-button-container">
+      <% if(locals.currentUser && ((locals.currentUser.username === post.username && locals.currentUser.is_admin) || (locals.currentUser.is_admin_plus))){ %>
+
       <button type="button" class="kebab-btn" aria-label="More Options"> &#8942; </button>
 
       <div class="post-menu">
-        <button type="button" class="post-card-buttons delete" aria-label="Delete button">
-          Delete
-        </button>
-        <button type="button" class="post-card-buttons" aria-label="Edit button">
-
-          Edit
-        </button>
+        <!-- <button type="button" class="post-card-buttons delete" aria-label="Delete button" id="<%= post.id %>"> -->
+        <a href="/delete/<%= locals.currentUser.id %>/<%= post.id %>" class=" post-card-buttons delete link-delete">Delete</a>
+        <!-- </button> -->
       </div>
+      <% } %>
 
     </div>
   </div>

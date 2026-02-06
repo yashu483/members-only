@@ -52,6 +52,10 @@ const createPost = async (post) => {
   );
 };
 
+const deletePostById = async (id) => {
+  await pool.query("DELETE FROM posts WHERE id= $1", [id]);
+};
+
 // join queries
 
 const getPostData = async () => {
@@ -88,6 +92,7 @@ module.exports = {
   grantMembership,
   getAllPosts,
   createPost,
+  deletePostById,
   getPostData,
   getMembershipKey,
   getAdminRoleKey,

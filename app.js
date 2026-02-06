@@ -15,6 +15,7 @@ const signUpRouter = require("./routes/signUpRouter");
 const logInRouter = require("./routes/logInRouter");
 const newPostRouter = require("./routes/newPostRouter");
 const rolesRouter = require("./routes/rolesRouter");
+const deleteRouter = require("./routes/deleteRouter");
 
 const app = express();
 
@@ -82,6 +83,7 @@ app.use("/", indexRouter);
 app.use("/signup", signUpRouter);
 app.use("/login", logInRouter);
 app.use("/new-post", newPostRouter);
+app.use("/delete", deleteRouter);
 app.use("/roles", rolesRouter);
 app.use("/logout", (req, res, next) => {
   req.logout((err) => {

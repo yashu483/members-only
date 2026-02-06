@@ -1,28 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <%- include('common-dependencies') %>
-    <link rel="stylesheet" href="./styles/roles.css" />
-    <title>Apply Role | Members only</title>
-  </head>
-  <body>
-    <%- include('header') %>
-    <main>
-      <div class="main-wrapper">
-        <div class="information">
-          <h1>Apply for Roles</h1>
-          <p>
-            Unlock exclusive features, see member details, delete or modify your
-            posts and many more with new roles
-          </p>
-        </div>
-        <%- locals.currentUser.is_member ? include('partials/membership-complete')
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <%- include('common-dependencies') %>
+  <link rel="stylesheet" href="./styles/roles.css" />
+  <title>Apply Role | Members only</title>
+</head>
+
+<body>
+  <%- include('header') %>
+  <main>
+    <div class="main-wrapper">
+      <div class="information">
+        <h1>Apply for Roles</h1>
+        <p>
+          Unlock exclusive features, see member details, delete or modify your
+          posts and many more with upgraded roles
+        </p>
+      </div>
+      <%- locals.currentUser.is_member ? include('partials/membership-complete')
         : include('partials/membership-card', {memberAuthErr: locals.memberAuthErr}) %> <%- locals.currentUser.is_admin ?
         include('partials/admin-complete') : include('partials/admin-card', {adminAuthErr: locals.adminAuthErr}) %>
-      </div>
-    </main>
-    <%- include('footer') %>
-  </body>
+    </div>
+  </main>
+  <%- include('footer') %>
+</body>
+
 </html>

@@ -14,6 +14,7 @@ let openedMenu = 0;
 kebabBtn.forEach((button, index) => {
   button.addEventListener("click", (e) => {
     e.stopPropagation();
+    menu[openedMenu].classList.remove("open");
     menu[index].classList.toggle("open");
     openedMenu = index;
   });
@@ -23,5 +24,7 @@ document.addEventListener("click", closeMenu);
 document.addEventListener("touchstart", closeMenu);
 
 function closeMenu() {
-  menu[openedMenu].classList.remove("open");
+  menu.forEach((btn) => {
+    btn.classList.remove("open");
+  });
 }

@@ -28,14 +28,14 @@ const rolesApplyPost = async (req, res, next) => {
         res.redirect("/roles");
         return;
       }
-      req.session.memberAuthErr = `Wrong answer. You typed ${key}`;
+      req.session.memberAuthErr = `Are you kidding ? You typed ${key}`;
     } else if (role === "admin") {
       if (key === "cat") {
         await db.grantAdminRole(req.user.id);
         res.redirect("/roles");
         return;
       }
-      req.session.adminAuthErr = `Wrong answer. You typed ${key}`;
+      req.session.adminAuthErr = `Wrong answer. You typed ${key}. Hint: Passcode contains only 3 letters`;
     }
     console.log("none");
     res.redirect("/roles");

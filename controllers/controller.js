@@ -77,6 +77,18 @@ const homePageGet = async (req, res) => {
   res.render("index", { posts: removeTimeFromPost });
 };
 
+const deleteGet = async (req, res, next) => {
+  try {
+    const { postid, userid } = req.params;
+    console.log(userid, postid, req.user.id);
+    if (req.user && (userid === `${req.user.id}` || req.user.is_admin_plus)) {
+      await db.deletePostById(postid);
+    }
+    res.redirect("/");
+  } catch (err) {
+    next(err);
+  }
+};
 // signup page controller
 const signUpGet = (req, res) => {
   res.render("sign-up");
@@ -162,4 +174,5 @@ module.exports = {
   logInGet,
   newPostGet,
   newPostAdd,
+  deleteGet,
 };
