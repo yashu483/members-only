@@ -1,6 +1,6 @@
 # Members Only
 
-<p><b>An exclusive club where only authorized users can join the conversation. User are required to log in and get authorized for more features. This is a project assignment from <a href="">The Odin Project</a> 2026 NodeJS course. Learning outcome of this website is to practice user authentication and authorization using Passpost.js Strategies. </b></p>
+<p>An exclusive club where only authorized users can join the conversation. User are required to log in and get authorized for more features. This is a project assignment from <a href="">The Odin Project</a> 2026 NodeJS course. Learning outcome of this website is to practice user authentication and authorization using Passpost.js Strategies. </p>
 
 ## Table of contents
 
@@ -205,9 +205,9 @@ http://localhost:3000
 
 ## Acknowledgements
 
-- Icons are downloaded from [Google Material Symbols]()
-- All fonts used are taken form [Google Fonts]()
-- Thanks to [The Odin Project]() community to provide an amazing learning resources.
+- Icons are downloaded from [Google Material Symbols and Icons](https://fonts.google.com/icons)
+- All fonts used are taken form [Google Fonts](https://fonts.google.com/)
+- Thanks to [The Odin Project](https://www.theodinproject.com) community to provide an amazing learning resources.
 
 ## Contact
 
