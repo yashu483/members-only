@@ -35,7 +35,7 @@ const rolesApplyPost = async (req, res, next) => {
         res.redirect("/roles");
         return;
       }
-      req.session.adminAuthErr = `Wrong answer. You typed ${key}. Hint: Passcode contains only 3 letters`;
+      req.session.adminAuthErr = `Wrong answer. You typed "${key}". Hint: Passcode contains  3 letters`;
     }
     console.log("none");
     res.redirect("/roles");

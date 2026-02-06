@@ -11,17 +11,12 @@
   </div>
   <form action="/roles/member" method="POST" class="role-form">
     <div>
-        <% if(memberAuthErr) { %>
-    <p class="auth-error-msg"><%= memberAuthErr %></p>
-  <% }  %>
-      <label for="key">Your answer</label
-      ><input
-        type="number"
-        required
-        id="key"
-        name="key"
-        placeholder="Enter your answer in number"
-      />
+      <% if(memberAuthErr) { %>
+      <div class="auth-errs">
+        <p><%= memberAuthErr %></p>
+      </div>
+      <% }  %>
+      <label for="key">Your answer</label><input type="number" required id="key" name="key" placeholder="Enter your answer in number" />
     </div>
     <button type="submit" class="btn-grad2">Submit Answer</button>
   </form>

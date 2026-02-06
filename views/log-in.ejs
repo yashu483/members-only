@@ -1,51 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <%- include('common-dependencies') %>
-    <link rel="stylesheet" href="./styles/login.css">
-    <title>Log In | Members Only</title>
-  </head>
-  <body>
-    <%- include('header') %>
-    <main>
-      <div class="main-wrapper">
-        <div class="log-in-form-details">
-          <h1>Welcome back</h1>
-          <p>Sign in to your account</p>
-        </div>
-        <form action="/login" method="POST" id="log-in-form">
-           <% if(locals.error){ %>
-            <p>Incorrect username or password</p>
-           <%} %>
-          <div>
-            <label for="username">Username</label
-            ><input
-              type="text"
-              id="username"
-              name="username"
-              autocomplete="username"
-              required
-            />
-          </div>
-          <div>
-            <label for="password">Password</label
-            ><input
-              type="password"
-              id="password"
-              name="password"
-              autocomplete="current-password"
-              required
-            />
-          </div>
-          <button type="submit" class="btn-grad">Sign In</button>
-        </form>
-        <div class="sign-up-link">
-          <p>Don't have an account? <a href="/signup">Register now</a></p>
-        </div>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <%- include('common-dependencies') %>
+  <link rel="stylesheet" href="./styles/login.css">
+  <title>Log In | Members Only</title>
+</head>
+
+<body>
+  <%- include('header') %>
+  <main>
+    <div class="main-wrapper">
+      <div class="log-in-form-details">
+        <h1>Welcome back</h1>
+        <p>Sign in to your account</p>
       </div>
-    </main>
-    <%- include('footer') %>
-  </body>
+      <form action="/login" method="POST" id="log-in-form">
+        <% if(locals.error){ %>
+        <div class="auth-errs">
+          <p>Incorrect username or password</p>
+        </div>
+        <%} %>
+        <div>
+          <label for="username">Username</label><input type="text" id="username" name="username" autocomplete="username" required />
+        </div>
+        <div>
+          <label for="password">Password</label><input type="password" id="password" name="password" autocomplete="current-password" required />
+        </div>
+        <button type="submit" class="btn-grad">Sign In</button>
+      </form>
+      <div class="sign-up-link">
+        <p>Don't have an account? <a href="/signup">Register now</a></p>
+      </div>
+    </div>
+  </main>
+  <%- include('footer') %>
+</body>
+
 </html>

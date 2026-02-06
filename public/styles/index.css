@@ -7,6 +7,11 @@ html[data-theme="light"] {
   --post-bg: white;
   --message: #364153;
   --post-date: rgb(123, 123, 124);
+  --hover-shadow:
+    rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.05) 0px 8px 32px;
+  --post-shadow:
+    rgba(65, 46, 46, 0.15) 2.4px 2.4px 3.2px,
+    rgba(65, 46, 46, 0.15) -2.4px -2.4px 3.2px;
 }
 html[data-theme="dark"] {
   --sign-up-bg: none;
@@ -27,6 +32,8 @@ html[data-theme="dark"] {
   --post-bg: black;
   --message: rgb(196, 196, 196);
   --post-date: rgb(196, 196, 196);
+  --post-border: 1px solid rgba(156, 156, 156, 0.5);
+  --btn-border: 1px solid rgb(255, 255, 255, 0.8);
 }
 
 html {
@@ -70,8 +77,9 @@ div#info-div > div > a {
   padding: 10px;
   gap: 10px;
   background-color: var(--post-bg);
-  border: 1px solid rgb(128, 128, 128, 0.5);
   border-radius: 8px;
+  box-shadow: var(--post-shadow);
+  border: var(--post-border);
 }
 
 .post-card p,
@@ -112,7 +120,7 @@ div#info-div > div > a {
 .admin,
 .member,
 .admin-plus {
-  font-size: 0.9rem;
+  font-size: 0.86rem;
   padding: 4px 7px;
   border-radius: 6px;
 }
@@ -128,7 +136,7 @@ div#info-div > div > a {
 
 .admin-plus {
   background-color: rgb(255, 246, 196);
-  color: orange;
+  color: orangered;
 }
 
 .blur {
@@ -171,9 +179,7 @@ div#info-div > div > a.sign-up {
 }
 
 #posts-section > div.posts-container {
-  /* border: 1px solid rgb(128, 128, 128, 0.5); */
   border-radius: 5px;
-  /* padding: 0 5px; */
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -189,6 +195,7 @@ div#info-div > div > a.sign-up {
   text-align: center;
   margin-bottom: 30px;
   border-radius: 5px;
+  border: var(--btn-border);
 }
 
 @media screen and (min-width: 768px) {

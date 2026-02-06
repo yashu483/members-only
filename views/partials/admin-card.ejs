@@ -1,20 +1,23 @@
 <div class="role-applying-card">
   <div class="role-details">
-    <div class="passkey-wrapper">
-      <img src="./icons/passkey-50.svg" alt="passkey sign" />
+    <div class="passkey-wrapper gold-passkey">
+      <img src="./icons/passkey-50-gold1.svg" alt="passkey sign" />
     </div>
     <h2>Become an Admin</h2>
     <p class="question">Answer this question to unlock admin privileges. Admin can delete their own posts.</p>
 
     <% if(!locals.currentUser.is_member){ %>
     <p class="question" style="color: red;"><em>Note: Only members can apply for the admin role. This form is disabled. Complete membership to enable this form.</em></p>
+
     <% } %>
     <p class="quest-paragraph">What animal says 'meow' ?</p>
   </div>
   <form action="/roles/admin" method="POST" class="role-form">
     <div>
       <% if(adminAuthErr){ %>
-      <p class="auth-error-msg"><%= adminAuthErr %></p>
+      <div class="auth-errs">
+        <p><%= adminAuthErr %></p>
+      </div>
       <% } %>
       <label for="key">Your Answer</label><input type="text" name="key" id="key" required placeholder="dog?" maxlength="20" <%= !locals.currentUser.is_member ? 'disabled': '' %> />
     </div>

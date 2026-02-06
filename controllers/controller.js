@@ -26,7 +26,7 @@ const validateSignUpData = [
     .custom(async (value) => {
       const availability = await db.checkUsernameAvailability(value);
       if (!availability) {
-        throw new Error("username already  exists");
+        throw new Error("Username already  exists. choose another username");
       }
       return true;
     }),
@@ -48,7 +48,7 @@ const validateSignUpData = [
     .withMessage(errMessages.confirmPassErr)
     .custom((value, { req }) => {
       if (value !== req.body.password) {
-        throw new Error("Password confirmation does not match password");
+        throw new Error("Password confirmation did not matched.");
       }
       return true;
     }),

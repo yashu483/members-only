@@ -113,7 +113,16 @@ roles completed card styles */
   padding: 15px;
   border-radius: 100px;
 }
-
+.passkey-wrapper.gold-passkey {
+  background-color: rgb(247, 247, 134);
+}
 .role-complete > p {
   text-align: center;
+}
+.auth-errs {
+  background-color: oklch(93.6% 0.032 17.717);
+  color: oklch(50.5% 0.213 27.518);
+  padding: 0px 10px;
+  border-radius: 8px;
+  border: 1px solid oklch(88.5% 0.062 18.334);
 }

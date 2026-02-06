@@ -18,6 +18,7 @@ html[data-theme="dark"] {
   --input-border: 1px solid white /* --input-bg: grey; */;
   --log-in-border: 1px solid rgb(211, 208, 208, 0.5);
   --submit-bg: none;
+  --submit-border: 1px solid rgb(255, 255, 255, 0.5);
 }
 
 main {
@@ -66,9 +67,17 @@ main {
   color: white;
   font-weight: 700;
   border-radius: 8px;
-  border: none;
+  border: var(--submit-border);
 }
 
 .sign-up-link {
   text-align: center;
+}
+
+.auth-errs {
+  background-color: oklch(93.6% 0.032 17.717);
+  color: oklch(50.5% 0.213 27.518);
+  padding: 0px 10px;
+  border-radius: 8px;
+  border: 1px solid oklch(88.5% 0.062 18.334);
 }
