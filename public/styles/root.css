@@ -226,7 +226,7 @@ footer {
   justify-content: center;
   align-items: center;
   border-top: 3px solid rgba(185, 184, 184, 0.5);
-  min-height: 540px;
+  min-height: 40px;
 }
 footer > p {
   margin: 0;
