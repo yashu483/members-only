@@ -38,7 +38,7 @@ const userSQL = `INSERT INTO users (first_name, last_name, username, password, i
 
 const main = async () => {
   const client = new Client({
-    connectionString: process.env.DATABASE_URL,
+    connectionString: process.env.DIRECT_URL,
   });
   try {
     console.log("seeding...");
