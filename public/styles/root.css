@@ -42,6 +42,7 @@ html[data-theme="light"] {
   --navigation-links: oklch(44.6% 0.03 256.802);
   --toggle-big-bg: url("./../icons/light-50-black.svg");
   --theme-button-hover-shadow: none;
+  --description-color: gray;
 }
 html[data-theme="dark"] {
   --heading-background-color: black;
@@ -56,6 +57,7 @@ html[data-theme="dark"] {
 
   --navigation-links: rgb(255, 255, 255, 0.8);
   --toggle-big-bg: url("./../icons/dark-50-white.svg");
+  --description-color: rgb(207, 207, 207);
 }
 html {
   padding: 0;
@@ -163,6 +165,10 @@ header {
   border: var(--heading-border);
   padding: 5px 10px;
   border-radius: 10px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 .header-homepage-logo-link {
   text-decoration: none;
@@ -220,8 +226,22 @@ footer {
   justify-content: center;
   align-items: center;
   border-top: 3px solid rgba(185, 184, 184, 0.5);
+  min-height: 540px;
+}
+footer > p {
+  margin: 0;
+  color: var(--description-color);
+  font-size: 0.9rem;
+}
+footer > p > a {
+  color: var(--description-color);
+  text-decoration: underline 1px solid var(--description-color);
 }
 
+footer > p > a:visited {
+  color: var(--description-color);
+  text-decoration: underline 1px solid var(--description-color);
+}
 form {
   max-width: 500px;
   margin: 0px auto;
